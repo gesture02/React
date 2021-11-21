@@ -13,24 +13,36 @@ import './App.css';
 //    - 내부에 적는 방법 style = {mystyle}
 //    - 외부 파일에 적는 방법
 //    - 라이브러리 사용 (bootstrap, component-styled)(추천)
-let a = 10;
-const b = 30;
+// let a = 10;
+// const b = 30;
+
+// function App() {
+//   let c; //undefined;
+//   //let d = undefined;
+//   console.log(1, c);
+
+//   const mystyle = {
+//     color: 'red',
+//   };
+
+//   return (
+//     <div>
+//       <div style={mystyle}>안녕{a === 10 ? '10입니다' : '10이 아닙니다'}</div>
+//       <h1 className="box-style">headingTag{b === 20 && '20입니다'}</h1>
+//     </div>
+//   );
+// }
 
 function App() {
-  let c; //undefined;
-  //let d = undefined;
-  console.log(1, c);
-
-  const mystyle = {
-    color: 'red',
-  };
-
+  let list = [1, 2, 3];
   return (
     <div>
-      <div style={mystyle}>안녕{a === 10 ? '10입니다' : '10이 아닙니다'}</div>
-      <h1 className="box-style">headingTag{b === 20 && '20입니다'}</h1>
+      <div>
+        {list.map((n) => (
+          <h1>{n}</h1>
+        ))}
+      </div>
     </div>
   );
 }
-
 export default App;

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <script>
+      //깊은 복사 함수
+      //스프레드(...)
+      const a = [1, 2, 3];
+      const b = [...a];
+      console.log('0.===========================스프레드 연산자');
+      b.push(4);
+      console.log(`a : ${a}`);
+      console.log(`b : ${b}`);
+
+      //concat : 추가할때 사용
+      const a1 = [1, 2, 3];
+      const b1 = a1.concat(4);
+      console.log('1.===========================추가하기');
+      console.log(`a1 : ${a1}`);
+      console.log(`b1 : ${b1}`);
+      const c1 = [...a1, 4]; // [1,2,3,4]
+      console.log('c1 : ${c1}');
+      const c1 = [0, ...a1, 4]; // [0,1,2,3,4]
+      console.log('c1 : ${c1}');
+
+      //filter(걸러내기)
+      const a2 = [1, 2, 3];
+      const b2 = a2.filter((n) => {
+        return n != 1;
+      });
+      //n에 1,2,3이 순차적으로 들어감
+      //return타입이 boolean => true만 걸러낸다.
+      //삭제하기 할때 사용
+      console.log('2.===========================걸러내기');
+      console.log(`a2 : ${a2}`);
+      console.log(`b2 : ${b2}`); // 2, 3
+
+      //slice(잘라내기)
+      const a3 = [1, 2, 3];
+      const b3 = a3.slice(0, 2); // [1,2]
+      console.log('3.===========================잘라내기');
+      console.log(b3); // [1,2]
+
+      const c3 = [a3.slice(0, 2)];
+      console.log(c3); // [[1,2]]
+
+      const c31 = [...a3.slice(0, 2)];
+      console.log(c31); // [1,2]
+
+      const c31 = [...a3.slice(0, 2), 4, ...a3.slice(2, 3)];
+      console.log(c31); // [1,2,4,3] 슬라이스와 스프레드를 이용하면 중간에 삽입이 가능하다.
+
+      //map(반복하기)
+      const a4 = [1, 2, 3];
+      // for(let i=0; i<a4.length; i++){
+      // 	console.log(a4[i]);
+      // }
+      console.log('4.===========================반복하기');
+      // array.forEach((n) => {
+      //   console.log(n);
+      // }); //중괄호 없어지면 return문 => foreach는 return 못함(void)임
+      const b4 = a4.map((n) => n + 10);
+      //const b4 = [...a4] : 스프레드와 같지만
+      //map은 중간에 값을 바꿀 수 있다.
+      //중괄호 안썼으니까 return 바로됨
+      console.log(b4); //[11,12,13]
+    </script>
+  </body>
+</html>
