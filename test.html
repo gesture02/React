@@ -67,6 +67,33 @@
       //map은 중간에 값을 바꿀 수 있다.
       //중괄호 안썼으니까 return 바로됨
       console.log(b4); //[11,12,13]
+
+      //배열 수정하기
+      const data = { phone: '2222' };
+      const a5 = {
+        id: 1,
+        name: '홍길동',
+        phone: '1111',
+        age: 17,
+        gender: '남',
+      };
+      const b5 = { ...a5, ...data }; //a5가 data로 수정되어 새 배열로 만들어짐
+      console.log(b5);
+
+      const users = [
+        { id: 1, name: '철이', phone: '2222' },
+        { id: 2, name: '철삼', phone: '3333' },
+        { id: 3, name: '철사', phone: '4444' },
+      ];
+      const updateUserDto = {
+        id: 2,
+        name: '홍길동',
+      };
+
+      //const newUsers = users.map((u) => u); // const newUsers = {...Users};
+      const newUsers = users.map((user) =>
+        user.id === updateUserDto.id ? { ...user, ...updateUserDto } : user,
+      );
     </script>
   </body>
 </html>
