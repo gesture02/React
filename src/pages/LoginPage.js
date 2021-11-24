@@ -1,16 +1,16 @@
 import React from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import Login from '../components/login/Login';
 
-const LoginPage = () => {
+const LoginPage = (props) => {
+  const { match, history } = props;
+  console.log('LoginPage : ', match.params);
   return (
     <div>
-      <Header />
+      <button onClick={() => history.push('/')}>뒤로가기</button>
       <Login />
-      <Footer />
     </div>
   );
 };
 
 export default LoginPage;
+//2641

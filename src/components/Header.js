@@ -1,4 +1,6 @@
 import React from 'react';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 // 하나의 컴포넌트를 생성(재사용)
@@ -8,15 +10,41 @@ const StyledHeaderDiv = styled.div`
   height: 300px;
   background-color: ${(props) => props.backgroundColor};
 `;
-
+const StyledHeaderLink = styled(Link)`
+  color: white;
+`;
 const Header = () => {
   return (
-    <StyledHeaderDiv backgroundColor={'blue'}>
-      <ul>
-        <li>오시는 길: 서울 강남구</li>
-        <li>전화번호 : 020000000</li>
-      </ul>
-    </StyledHeaderDiv>
+    <>
+      <StyledHeaderDiv backgroundColor={'blue'}>
+        <ul>
+          <li>
+            <StyledHeaderLink to="/">홈</StyledHeaderLink>
+          </li>
+          <li>
+            <StyledHeaderLink to="/login/10">로그인</StyledHeaderLink>
+          </li>
+        </ul>
+      </StyledHeaderDiv>
+
+      <>
+        <Navbar bg="dark" variant="dark">
+          <Container>
+            <Link to="/" className="navbar-brand">
+              홈으로
+            </Link>
+            <Nav className="me-auto">
+              <Link to="/" className="nav-link">
+                홈
+              </Link>
+              <Link to="/login" className="nav-link">
+                login
+              </Link>
+            </Nav>
+          </Container>
+        </Navbar>
+      </>
+    </>
   );
 };
 

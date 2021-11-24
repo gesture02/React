@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import Home from '../components/Home/Home';
 
 //상태값은 page가 들고있도록 할것 component에는 없는게 좋음 (요청도 마찬가지)
@@ -22,17 +20,13 @@ const HomePage = () => {
     setUser({ id: 1, username: 'ssar' });
   }, []); //빈배열이면 한번만 실행
   return (
-    <div>
-      <Header />
-      <Home
-        boards={boards}
-        setBoards={setBoards}
-        number={number}
-        setNumber={setNumber}
-        user={user}
-      />
-      <Footer />
-    </div>
+    <Home
+      boards={boards}
+      setBoards={setBoards}
+      number={number}
+      setNumber={setNumber}
+      user={user}
+    />
   );
 };
 
