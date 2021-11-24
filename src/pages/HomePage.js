@@ -8,6 +8,7 @@ const HomePage = () => {
   // http 요청 (fetch, axios(다운로드))
   const [boards, setBoards] = useState([]);
   const [number, setNumber] = useState(0);
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     //다운로드 가정
@@ -18,6 +19,7 @@ const HomePage = () => {
     ];
 
     setBoards([...data]);
+    setUser({ id: 1, username: 'ssar' });
   }, []); //빈배열이면 한번만 실행
   return (
     <div>
@@ -27,6 +29,7 @@ const HomePage = () => {
         setBoards={setBoards}
         number={number}
         setNumber={setNumber}
+        user={user}
       />
       <Footer />
     </div>

@@ -6,11 +6,12 @@ import styled from 'styled-components';
 const StyledHeaderDiv = styled.div`
   border: 5px solid black;
   height: 300px;
+  background-color: ${(props) => props.backgroundColor};
 `;
 
 const Header = () => {
   return (
-    <StyledHeaderDiv>
+    <StyledHeaderDiv backgroundColor={'blue'}>
       <ul>
         <li>오시는 길: 서울 강남구</li>
         <li>전화번호 : 020000000</li>
