@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router';
-import ListPage from './pages/ListPage';
+import './App.css';
+import Bottom from './components/Bottom';
+import Top from './components/Top';
 
 const App = () => {
   return (
-    <div>
-      <ListPage />
+    <div className="container">
+      <h1>최상단 화면</h1>
+      <Top />
+      <Bottom />
     </div>
   );
 };
